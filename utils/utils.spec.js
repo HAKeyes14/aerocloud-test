@@ -25,4 +25,31 @@ describe("getHotelData", () => {
     ];
     expect(getHotelData()).to.eql(expectedData);
   });
+  it("returns only the hotels with the specified facilities", () => {
+    let expectedData = [
+      {
+        name: "hotelone",
+        starRating: 5,
+        facilities: ["car park", "pool"]
+      }
+    ];
+    expect(getHotelData(["pool"])).to.eql(expectedData);
+
+    expectedData = [
+      {
+        name: "hotelone",
+        starRating: 5,
+        facilities: ["car park", "pool"]
+      },
+      {
+        name: "hoteltwo",
+        starRating: 3,
+        facilities: ["car park", "gym"]
+      }
+    ];
+    expect(getHotelData(["car park"])).to.eql(expectedData);
+
+    expectedData = [];
+    expect(getHotelData(["pool", "gym"])).to.eql(expectedData);
+  });
 });
