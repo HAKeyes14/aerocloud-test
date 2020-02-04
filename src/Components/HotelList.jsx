@@ -31,7 +31,8 @@ class HotelsList extends Component {
 
 const mapStateToProps = state => {
   return {
-    order: state.order
+    order: state.order,
+    filters: state.facilities
   };
 };
 
