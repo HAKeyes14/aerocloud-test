@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getHotelData } from "../utils/utils";
+import HotelCard from "./HotelCard";
 
 class HotelList extends Component {
   state = {
@@ -17,8 +18,8 @@ class HotelList extends Component {
       <p>Loading...</p>
     ) : count ? (
       <ul>
-        {hotels.map(hotel => (
-          <p>{hotel.name}</p>
+        {hotels.map((hotel, i) => (
+          <HotelCard hotel={hotel} key={i} />
         ))}
       </ul>
     ) : (
