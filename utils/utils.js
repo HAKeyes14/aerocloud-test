@@ -1,3 +1,4 @@
 exports.getHotelData = () => {
-  return [];
+  const data = require("../data.json");
+  return data.hotelData;
 };
