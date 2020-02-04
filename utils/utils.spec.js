@@ -52,4 +52,44 @@ describe("getHotelData", () => {
     expectedData = [];
     expect(getHotelData(["pool", "gym"])).to.eql(expectedData);
   });
+
+  it("returns the hotels sorted by ascending or descending star rating", () => {
+    let expectedData = [
+      {
+        name: "hotelone",
+        starRating: 5,
+        facilities: ["car park", "pool"]
+      },
+      {
+        name: "hoteltwo",
+        starRating: 3,
+        facilities: ["car park", "gym"]
+      },
+      {
+        name: "hotelthree",
+        starRating: 3,
+        facilities: []
+      }
+    ];
+    expect(getHotelData([], "asc")).to.eql(expectedData);
+
+    expectedData = [
+      {
+        name: "hoteltwo",
+        starRating: 3,
+        facilities: ["car park", "gym"]
+      },
+      {
+        name: "hotelthree",
+        starRating: 3,
+        facilities: []
+      },
+      {
+        name: "hotelone",
+        starRating: 5,
+        facilities: ["car park", "pool"]
+      }
+    ];
+    expect(getHotelData([], "desc")).to.eql(expectedData);
+  });
 });
