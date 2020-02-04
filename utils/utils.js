@@ -10,5 +10,5 @@ exports.getHotelData = (facilities, order) => {
     if (order === "asc") return b.starRating - a.starRating;
     if (order === "desc") return a.starRating - b.starRating;
   });
-  return filteredData;
+  return { hotels: filteredData, count: filteredData.length };
 };
