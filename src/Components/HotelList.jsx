@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { getHotelData } from "../utils/utils";
 import HotelCard from "./HotelCard";
+import { connect } from "react-redux";
 
-class HotelList extends Component {
+class HotelsList extends Component {
   state = {
     hotels: [],
     count: 0,
@@ -27,5 +28,13 @@ class HotelList extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    order: state.order
+  };
+};
+
+const HotelList = connect(mapStateToProps)(HotelsList);
 
 export default HotelList;
