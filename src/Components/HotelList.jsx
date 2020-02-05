@@ -15,17 +15,24 @@ class HotelsList extends Component {
 
   componentDidMount() {
     const { order, filters } = this.props;
-    const { hotels, count } = getHotelData(filters, order);
+    const { p, limit } = this.state;
+    const { hotels, count } = getHotelData(filters, order, limit, p);
     this.setState({ hotels, count, isLoading: false });
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
+    const { p, limit } = this.state;
     const { order, filters } = this.props;
+    if (!checkArraysEqual(filters, prevProps.filters)) {
+      this.setState({ p: 1 });
+    }
     if (
       prevProps.order !== order ||
-      !checkArraysEqual(filters, prevProps.filters)
+      !checkArraysEqual(filters, prevProps.filters) ||
+      prevState.limit !== limit ||
+      prevState.p !== p
     ) {
-      const { hotels, count } = getHotelData(filters, order);
+      const { hotels, count } = getHotelData(filters, order, limit, p);
       this.setState({ hotels, count, isLoading: false });
     }
   }
