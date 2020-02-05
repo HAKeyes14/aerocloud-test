@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { getHotelData } = require("./utils");
+const { getHotelData, checkArraysEqual } = require("./utils");
 
 describe("getHotelData", () => {
   it("returns an object with keys hotels and count", () => {
@@ -107,5 +107,18 @@ describe("getHotelData", () => {
       count: 3
     };
     expect(getHotelData([], "desc")).to.eql(expectedData);
+  });
+});
+
+describe("checkArraysEqual", () => {
+  it("returns true when passed 2 empty arrays", () => {
+    expect(checkArraysEqual([], [])).to.equal(true);
+  });
+  it("returns false if the arrays have different lengths", () => {
+    expect(checkArraysEqual([1], [1, 2, 3])).to.equal(false);
+  });
+  it("returns false if the arrays do not contain the same values", () => {
+    expect(checkArraysEqual([1, 5, 7, 3], [1, 2, 3, 5])).to.equal(false);
+    expect(checkArraysEqual([1, 6, 3, 5, 7], [7, 6, 3, 5, 1])).to.equal(true);
   });
 });

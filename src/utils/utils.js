@@ -13,3 +13,13 @@ exports.getHotelData = (facilities, order) => {
   });
   return { hotels: filteredData, count: filteredData.length };
 };
+
+exports.checkArraysEqual = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) return false;
+  const _arr1 = arr1.concat().sort();
+  const _arr2 = arr2.concat().sort();
+  for (let i = 0; i < arr1.length; i++) {
+    if (_arr1[i] !== _arr2[i]) return false;
+  }
+  return true;
+};
