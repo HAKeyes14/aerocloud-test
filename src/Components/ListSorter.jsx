@@ -40,6 +40,7 @@ class ListSorter extends Component {
     const { dispatch } = this.props;
     return (
       <div>
+        <h2>Search Options</h2>
         <label>
           Sort by:{" "}
           <select

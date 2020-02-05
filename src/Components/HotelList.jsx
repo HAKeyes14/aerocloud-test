@@ -53,6 +53,7 @@ class HotelsList extends Component {
       <p>Loading...</p>
     ) : count ? (
       <>
+        <h2>Results:</h2>
         <PageSelector
           handlePageClick={this.handlePageClick}
           handleLimitChange={this.handleLimitChange}
@@ -74,7 +75,10 @@ class HotelsList extends Component {
         />
       </>
     ) : (
-      <p>No hotels matching your criteria.</p>
+      <>
+        <h2>Results:</h2>
+        <p>No hotels matching your criteria.</p>
+      </>
     );
   }
 }

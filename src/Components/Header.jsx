@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = () => {
-  return <div>Hotel Search</div>;
+  return <h1>Hotel Search</h1>;
 };
 
 export default Header;
