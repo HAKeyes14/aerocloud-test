@@ -53,7 +53,7 @@
     {
       "name": "hoteleleven",
       "starRating": 3,
-      "facilities": ["car park", gym]
+      "facilities": ["car park", "gym"]
     },
     {
       "name": "hoteltwelve",
