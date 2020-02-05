@@ -1,4 +1,4 @@
-exports.getHotelData = (facilities, order) => {
+exports.getHotelData = (facilities, order, limit) => {
   const { hotelData } = require("../data.json");
   let filteredData = hotelData;
   if (facilities) {
@@ -11,7 +11,8 @@ exports.getHotelData = (facilities, order) => {
     if (order === "desc") return b.starRating - a.starRating;
     return 0;
   });
-  return { hotels: filteredData, count: filteredData.length };
+  const limitedData = filteredData.slice(0, limit);
+  return { hotels: limitedData, count: filteredData.length };
 };
 
 exports.checkArraysEqual = (arr1, arr2) => {
