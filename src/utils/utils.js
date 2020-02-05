@@ -1,4 +1,4 @@
-exports.getHotelData = (facilities, order, limit) => {
+exports.getHotelData = (facilities, order, limit = 50, p = 1) => {
   const { hotelData } = require("../data.json");
   let filteredData = hotelData;
   if (facilities) {
@@ -11,7 +11,10 @@ exports.getHotelData = (facilities, order, limit) => {
     if (order === "desc") return b.starRating - a.starRating;
     return 0;
   });
-  const limitedData = filteredData.slice(0, limit);
+  const limitedData = filteredData.slice(
+    limit * (p - 1),
+    limit * (p - 1) + limit
+  );
   return { hotels: limitedData, count: filteredData.length };
 };
 

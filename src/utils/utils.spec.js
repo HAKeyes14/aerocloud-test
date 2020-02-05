@@ -494,6 +494,19 @@ describe("getHotelData", () => {
     };
     expect(getHotelData([], "desc", 1)).to.eql(expectedData);
   });
+  it("returns the specified page of hotels", () => {
+    const expectedData = {
+      hotels: [
+        {
+          name: "hotelsix",
+          starRating: 5,
+          facilities: ["car park", "pool", "gym"]
+        }
+      ],
+      count: 21
+    };
+    expect(getHotelData([], "desc", 1, 2)).to.eql(expectedData);
+  });
 });
 
 describe("checkArraysEqual", () => {
