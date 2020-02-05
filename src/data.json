@@ -14,6 +14,96 @@
       "name": "hotelthree",
       "starRating": 3,
       "facilities": []
+    },
+    {
+      "name": "hotelfour",
+      "starRating": 1,
+      "facilities": ["gym"]
+    },
+    {
+      "name": "hotelfive",
+      "starRating": 3,
+      "facilities": ["pool", "car park"]
+    },
+    {
+      "name": "hotelsix",
+      "starRating": 5,
+      "facilities": ["car park", "pool", "gym"]
+    },
+    {
+      "name": "hotelseven",
+      "starRating": 2,
+      "facilities": []
+    },
+    {
+      "name": "hoteleight",
+      "starRating": 4,
+      "facilities": ["gym"]
+    },
+    {
+      "name": "hotelnine",
+      "starRating": 4,
+      "facilities": ["gym", "pool"]
+    },
+    {
+      "name": "hotelten",
+      "starRating": 3,
+      "facilities": ["car park"]
+    },
+    {
+      "name": "hoteleleven",
+      "starRating": 3,
+      "facilities": ["car park", gym]
+    },
+    {
+      "name": "hoteltwelve",
+      "starRating": 3,
+      "facilities": []
+    },
+    {
+      "name": "hotelthirteen",
+      "starRating": 3,
+      "facilities": []
+    },
+    {
+      "name": "hotelfourteen",
+      "starRating": 1,
+      "facilities": []
+    },
+    {
+      "name": "hotelfifteen",
+      "starRating": 5,
+      "facilities": ["car park", "pool", "gym"]
+    },
+    {
+      "name": "hotelsixteen",
+      "starRating": 4,
+      "facilities": []
+    },
+    {
+      "name": "hotelseventeen",
+      "starRating": 3,
+      "facilities": ["gym", "car park"]
+    },
+    {
+      "name": "hoteleighteen",
+      "starRating": 2,
+      "facilities": ["car park"]
+    },
+    {
+      "name": "hotelnineteen",
+      "starRating": 5,
+      "facilities": ["pool", "gym"]
+    },
+    {
+      "name": "hoteltwenty",
+      "starRating": 4,
+      "facilities": ["pool"]
+    },
+    {
+      "name": "hoteltwentyone",
+      "starRating": 3,
+      "facilities": ["car park", "pool"]
     }
   ]
 }
