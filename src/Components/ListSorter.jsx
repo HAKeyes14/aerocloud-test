@@ -39,7 +39,7 @@ class ListSorter extends Component {
   render() {
     const { dispatch } = this.props;
     return (
-      <div>
+      <section className="ListSorter">
         <h2>Search Options</h2>
         <label>
           Sort by:{" "}
@@ -53,6 +53,7 @@ class ListSorter extends Component {
             <option value={"asc"}>Lowest Rated</option>
           </select>
         </label>
+        <h3>Filter by:</h3>
         <label>
           Gym
           <input
@@ -94,7 +95,7 @@ class ListSorter extends Component {
           />
         </label>
         <button onClick={this.handleClick}>Clear Filters</button>
-      </div>
+      </section>
     );
   }
 }

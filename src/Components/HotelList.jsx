@@ -50,9 +50,9 @@ class HotelsList extends Component {
   render() {
     const { hotels, count, isLoading, p, limit } = this.state;
     return isLoading ? (
-      <p>Loading...</p>
+      <p className="HotelList">Loading...</p>
     ) : count ? (
-      <>
+      <section className="HotelList">
         <h2>Results:</h2>
         <PageSelector
           handlePageClick={this.handlePageClick}
@@ -61,7 +61,7 @@ class HotelsList extends Component {
           limit={limit}
           count={count}
         />
-        <ul>
+        <ul className="list">
           {hotels.map((hotel, i) => (
             <HotelCard hotel={hotel} key={i} />
           ))}
@@ -73,12 +73,12 @@ class HotelsList extends Component {
           limit={limit}
           count={count}
         />
-      </>
+      </section>
     ) : (
-      <>
+      <section className="HotelList">
         <h2>Results:</h2>
         <p>No hotels matching your criteria.</p>
-      </>
+      </section>
     );
   }
 }

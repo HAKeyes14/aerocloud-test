@@ -8,15 +8,21 @@ const PageSelector = ({
   count
 }) => {
   return (
-    <section>
-      <div>
-        {p !== 1 && <button onClick={() => handlePageClick(-1)}>Prev</button>}
-        <p>Page: {p}</p>
+    <section className="pageSelector">
+      <div className="pages">
+        {p !== 1 && (
+          <button className="prev" onClick={() => handlePageClick(-1)}>
+            Prev
+          </button>
+        )}
+        <p className="num">Page: {p}</p>
         {Math.ceil(count / limit) !== p && (
-          <button onClick={() => handlePageClick(1)}>Next</button>
+          <button className="next" onClick={() => handlePageClick(1)}>
+            Next
+          </button>
         )}
       </div>
-      <div>
+      <div className="items">
         <form>
           <label>
             Items per page:{" "}

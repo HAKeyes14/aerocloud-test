@@ -1,3 +1,146 @@
 .App {
   text-align: center;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-areas: "header header" "list options";
+  grid-template-columns: 70vw 30vw;
+  grid-template-rows: 10vh 90vh;
+}
+
+h1 {
+  grid-area: header;
+}
+
+.HotelList {
+  grid-area: list;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgb(0, 102, 181);
+  border-radius: 3px;
+  margin: 5px 10px 0px 10px;
+  background-color: rgb(248, 252, 255);
+}
+
+.list {
+  height: 100%;
+  overflow: scroll;
+  list-style-type: none;
+  padding: 1px;
+  margin: 5px 10px;
+  border: 0.5px solid rgb(0, 102, 181);
+  border-radius: 3px;
+  background-color: rgb(248, 252, 255);
+}
+
+.HotelCard {
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 10px;
+  display: grid;
+  grid-template-areas: "name starRating" "facilities facilities";
+  grid-template-columns: 3fr 2fr;
+  height: 120px;
+}
+
+.HotelCard section {
+  grid-area: facilities;
+}
+
+.HotelCard section ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.pageSelector {
+  border: 0.5px solid rgb(0, 102, 181);
+  border-radius: 3px;
+  margin: 5px 10px 0px 10px;
+  background-color: rgb(248, 252, 255);
+  height: 50px;
+  display: grid;
+  grid-template-areas: "pages items";
+  grid-template-columns: 1fr 1fr;
+}
+
+.items {
+  grid-area: items;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.items form label select {
+  font-size: 14px;
+}
+
+.items p {
+  font-size: 12px;
+  margin: 0;
+  margin-top: 5px;
+  color: rgb(67, 67, 67);
+}
+
+.pages {
+  grid-area: pages;
+  border-right: 0.5px solid gray;
+  font-size: medium;
+  display: grid;
+  grid-template-areas: "prev num next";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.prev {
+  grid-area: prev;
+}
+
+.num {
+  grid-area: num;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.next {
+  grid-area: next;
+}
+
+.next,
+.prev {
+  height: 32px;
+  width: 80px;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  border: 2px solid #88ccff;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.next:hover,
+.prev:hover {
+  background-color: rgb(0, 118, 208);
+  color: white;
+}
+
+.next:active,
+.prev:active {
+  background-color: rgb(0, 43, 75);
+}
+
+.ListSorter {
+  grid-area: options;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1px;
+  margin: 5px 10px;
+  border: 0.5px solid rgb(0, 102, 181);
+  border-radius: 3px;
+  background-color: rgb(248, 252, 255);
 }

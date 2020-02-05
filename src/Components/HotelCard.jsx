@@ -2,7 +2,7 @@ import React from "react";
 
 const HotelCard = ({ hotel }) => {
   return (
-    <li>
+    <li className="HotelCard">
       <h3>{hotel.name}</h3>
       <p>User rating: {hotel.starRating}</p>
       <section>
