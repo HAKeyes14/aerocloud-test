@@ -7,8 +7,8 @@ exports.getHotelData = (facilities, order) => {
     });
   }
   filteredData.sort((a, b) => {
-    if (order === "asc") return b.starRating - a.starRating;
-    if (order === "desc") return a.starRating - b.starRating;
+    if (order === "asc") return a.starRating - b.starRating;
+    if (order === "desc") return b.starRating - a.starRating;
     return 0;
   });
   return { hotels: filteredData, count: filteredData.length };
