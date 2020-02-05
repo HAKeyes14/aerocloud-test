@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getHotelData } from "../utils/utils";
+import { getHotelData, checkArraysEqual } from "../utils/utils";
 import HotelCard from "./HotelCard";
 import { connect } from "react-redux";
 
@@ -9,10 +9,24 @@ class HotelsList extends Component {
     count: 0,
     isLoading: true
   };
+
   componentDidMount() {
-    const { hotels, count } = getHotelData();
+    const { order, filters } = this.props;
+    const { hotels, count } = getHotelData(filters, order);
     this.setState({ hotels, count, isLoading: false });
   }
+
+  componentDidUpdate(prevProps) {
+    const { order, filters } = this.props;
+    if (
+      prevProps.order !== order ||
+      !checkArraysEqual(filters, prevProps.filters)
+    ) {
+      const { hotels, count } = getHotelData(filters, order);
+      this.setState({ hotels, count, isLoading: false });
+    }
+  }
+
   render() {
     const { hotels, count, isLoading } = this.state;
     return isLoading ? (
